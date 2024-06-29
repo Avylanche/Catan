@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import java. util. ArrayList;
+import java.util.ArrayList;
 public class GamePlay {
     static Scanner scan = new Scanner(System.in);
     static String quickGuide = ("quit: end game \n" + "stop: end roll");
@@ -13,7 +13,7 @@ public class GamePlay {
         System.out.println("Which color would you like?");
         System.out.println("Red, Orange, White, Blue");
         if (Response().equals("red")){
-            //set colors here and afterwqards
+        player.setColor("red")
         }
     }
 
