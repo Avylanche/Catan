@@ -9,11 +9,15 @@ public class Hex {
     private int number;
     private boolean robberStatus;
     private int positionForPlayer;
-    public Hex (String t, int n, boolean r, int p){
+    private int row;
+    private int col;
+    public Hex (String t, int n, boolean r, int p, int x, int y){
         type = t;
         number = n;
         robberStatus = false;
         positionForPlayer = p;
+        this.row = x;
+        this.col = y;
         ore = "ore";
         wood = "wood";
         sheep = "sheep";

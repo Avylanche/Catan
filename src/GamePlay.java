@@ -12,8 +12,18 @@ public class GamePlay {
         System.out.println("***********************************************");
         System.out.println("Which color would you like?");
         System.out.println("Red, Orange, White, Blue");
-        if (Response().equals("red")){
-        player.setColor("red")
+        String color = Response();
+        if (color.equals("red")){
+        player.setColor("red");
+        }
+        if (color.equals("orange")){
+            player.setColor("orange");
+        }
+        if (color.equals("white")){
+            player.setColor("white");
+        }
+        if (Response().equals("blue")){
+            player.setColor("blue");
         }
     }
 
@@ -29,13 +39,14 @@ public class GamePlay {
             if (roll==7){
                 System.out.println("7 was rolled...uh oh! If your hand exceeds 6, you lose half your cards.");
                 System.out.println("Please select a new hex for the robber to inhabit");
-                for (int row=0; row<board.length; row++){
-                    for (int col=0; col<board[row].length; col++){
-                        if (board[row][col]!=null && board[row][col].getPosition()==Response()){ {
-                            setRobberStatusTrue();
+                int position = Integer.parseInt(Response());
+                for (int row=0; row<board.board.length; row++){
+                    for (int col=0; col<board.board[row].length; col++){
+                        if (board.board[row][col]!=null && board.board[row][col].getPosition()==position){
+                            Hex hex = board.board[row][col];
+                            hex.setRobberStatusTrue();
                         }
                             Robber();
-                        }
                     }
                 }
             }

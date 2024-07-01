@@ -1,6 +1,6 @@
 import java. util. ArrayList;
 public class Board {
-    private Hex[][] board; //can i make this public or something
+    public Hex[][] board; //can i make this public or something
     public Board(){
         board = new Hex[5][5];
         board[0][3] = null;
@@ -82,10 +82,10 @@ public class Board {
                             int temp=(int)(Math.random()*(deck.size()));
                             int rollDisk = (int)(Math.random()*(disks.size()));
                             if (deck.get(temp).equals("desert")){
-                                board[row][col]=new Hex(deck.get(temp),-1, true, n); //-1 if for desert, nobody rolls -1
+                                board[row][col]=new Hex(deck.get(temp),-1, true, n, row,col); //-1 if for desert, nobody rolls -1
                             }
                             else{
-                                board[row][col]=new Hex(deck.get(temp),disks.get(rollDisk), false, n);
+                                board[row][col]=new Hex(deck.get(temp),disks.get(rollDisk), false, n, row,col);
                                 deck.remove(temp);
                                 disks.remove(rollDisk);
                             }
